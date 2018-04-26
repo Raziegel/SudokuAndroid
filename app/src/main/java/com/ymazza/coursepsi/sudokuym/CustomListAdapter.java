@@ -31,7 +31,7 @@ public class CustomListAdapter extends ArrayAdapter<vGrille> {
         TextView tvCompletion = (TextView) convertView.findViewById(R.id.tvCompletion);
         // Populate the data into the template view using the data object
         tvInfo.setText("Difficulté : " + String.valueOf(vGrille.getLvl()) + " : Grille " + String.valueOf(vGrille.getId()));
-        tvCompletion.setText(String.valueOf(vGrille.getDone()));
+        tvCompletion.setText(String.valueOf(vGrille.getDone()) + "%");
         if (vGrille.getDone() > 40){
             tvCompletion.setTextColor(0xFF00FF00);
         }else{
