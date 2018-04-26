@@ -25,6 +25,10 @@ public class MainActivity extends Activity {
 
                 Intent intentMainToActivity = new Intent( MainActivity.this, ArraySelection.class);
                 intentMainToActivity.putExtra(EXTRA_MESSAGE,"Level 1");
+                Bundle b = new Bundle();
+                b.putString("levellabel", "Level 1");
+                b.putInt("level", 1);
+                intentMainToActivity.putExtras(b);
                 startActivity(intentMainToActivity);
 
             }
@@ -42,6 +46,10 @@ public class MainActivity extends Activity {
 
                 Intent intentMainToActivity = new Intent( MainActivity.this, ArraySelection.class);
                 intentMainToActivity.putExtra(EXTRA_MESSAGE,"Level 2");
+                Bundle b = new Bundle();
+                b.putString("levellabel", "Level 2");
+                b.putInt("level", 2);
+                intentMainToActivity.putExtras(b);
                 startActivity(intentMainToActivity);
 
             }

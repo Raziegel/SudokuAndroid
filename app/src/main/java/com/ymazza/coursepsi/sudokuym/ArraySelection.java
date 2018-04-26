@@ -25,14 +25,25 @@ public class ArraySelection extends Activity {
 
         LinearLayout listLayout=  findViewById(R.id.listLayout);
         ListView listView = findViewById(R.id.listView);
+
         Intent intent = getIntent();
-        lvlselected.setText(intent.getStringExtra( MainActivity.EXTRA_MESSAGE));
+        String levellabel = intent.getExtras().getString("levellabel");
+        int level = intent.getExtras().getInt("level");
+        lvlselected.setText(levellabel);
+
         final ArrayList<vGrille> vGrilleList = new ArrayList<vGrille>();
+        if (level == 1) {
+            for (int i = 0; i < 100; i++) {
+                vGrille vGrille = new vGrille(i, 1);
+                vGrilleList.add(vGrille);
 
-        for (int i=0; i < 100; i++){
-            vGrille vGrille = new vGrille(i, 1);
-            vGrilleList.add(vGrille);
+            }
+        }else if (level == 2){
+            for (int i = 0; i < 100; i++) {
+                vGrille vGrille = new vGrille(i, 2);
+                vGrilleList.add(vGrille);
 
+            }
         }
 
         CustomListAdapter cla = new CustomListAdapter(this, vGrilleList);
